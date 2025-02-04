@@ -1,7 +1,7 @@
 "use server"
 
 import { UserStore } from '@/hooks/useUserStore';
-import { createSession, deleteSession, encrypt } from '@/lib/session';
+import { createSession, deleteSession } from '@/lib/session';
 import {OAuth2Client}  from 'google-auth-library';
 import { redirect } from 'next/navigation';
 
@@ -19,13 +19,13 @@ export async function googleLogin(prevState: any, googleJwtToken: string) {
     if (!payload) throw Error('Google google-auth-library didn\'t returned payload.')
     /*
     {
-      sub: '106118124079169595655', // (Subject) Claim - Users google internal id
-      email: 'mate.walendzik@gmail.com',
+      sub: '454365436345', // (Subject) Claim - Users google internal id
+      email: 'jonh.smith@gmail.com',
       email_verified: true,
-      name: 'Mateusz Walendzik',
-      picture: 'https://lh3.googleusercontent.com/a/ACg8ocLNSgiGbN5xaMfGb3lH-aFghcI5bT-imTSKzRm8sZeSZMtrVRF5=s96-c',
-      given_name: 'Mateusz',
-      family_name: 'Walendzik',
+      name: 'John Smith',
+      picture: 'https://......',
+      given_name: 'John',
+      family_name: 'Smith',
       exp: 1738431159,
     }
     */

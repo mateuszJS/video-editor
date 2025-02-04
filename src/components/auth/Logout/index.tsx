@@ -2,6 +2,7 @@
 
 import useUserStore from "@/hooks/useUserStore";
 import { logout } from "../actions";
+import Button from "@/components/Button";
 
 export default function Logout() {
   const userStore = useUserStore()
@@ -11,5 +12,5 @@ export default function Logout() {
     userStore.set(null)
   }
 
-  return <button onClick={onClick}>Logout</button>
+  return <Button onClick={onClick}>Logout</Button>
 }

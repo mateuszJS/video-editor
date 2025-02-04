@@ -18,9 +18,10 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./src",
+    "baseUrl": "./src", // not "src" because we want to acces "public" folder by alias, which is outside of "src"
     "paths": {
       "@/*": ["./*"],
+      "assets/*": ["../public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
